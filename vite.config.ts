@@ -21,4 +21,8 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  build: {
+    outDir: "public/build", // 输出到 Remix 静态文件夹中
+    assetsDir: "", // 将所有资源输出到根目录
+  },
 });
