@@ -1,9 +1,0 @@
-[build]
-  command = "npm run build" # 构建命令，确保构建 Remix 应用
-  publish = "public"        # 静态文件输出位置
-  functions = "netlify/functions"  # Netlify Functions 文件夹位置
-
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
