@@ -4,6 +4,8 @@ See it live: https://www.fsyud.com/
 
 <img width="1548" alt="iShot_2024-10-25_21 52 33" src="https://github.com/user-attachments/assets/b679b662-8409-47f8-be08-d2a8a4361fba">
 
+<img width="1423" alt="iShot_2024-10-25_23 39 44" src="https://github.com/user-attachments/assets/08819431-4143-4c21-b503-50b4728e1b6f">
+
 
 ## What's in the stack
 
