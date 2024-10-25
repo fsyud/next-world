@@ -1,6 +1,7 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import type { LinksFunction, LoaderFunctionArgs, SerializeFrom } from '@remix-run/node';
 import Header from '~/components/Header';
+import Footer from '~/components/Footer';
 import { getDomainUrl } from './utils/misc';
 
 import '~/styles/tailwind.css';
@@ -29,8 +30,8 @@ function App() {
 					<main className="relative mx-auto my-0 box-border flex w-full max-w-7xl flex-[1] flex-grow flex-col py-[1em] px-[2em]">
 						<Outlet />
 					</main>
+					<Footer />
 				</div>
-
 				<ScrollRestoration />
 				<Scripts />
 			</body>

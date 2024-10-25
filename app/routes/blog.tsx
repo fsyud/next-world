@@ -22,14 +22,13 @@ export default function Blog() {
 			variants={containerVariants}
 			initial="hidden"
 			animate="visible"
-			className="mx-auto my-0 w-full max-w-[42em] mb-8"
+			className="mx-auto my-0 w-full max-w-[42em]"
 		>
 			{posts.map((post: BlogList, index: number) => {
 				return (
 					<motion.div variants={textVariants} key={post.slug}>
-						{index !== 0 && <hr className="mx-auto my-[60px]" />}
-
-						<h2 className=" mb-4 mt-6 font-sans text-xl font-bold leading-[1.3] md:text-3xl">
+						{index !== 0 && <hr className="mx-auto" />}
+						<h2 className="mt-6 font-sans text-xl font-bold leading-[1.3] md:text-3xl">
 							<Link prefetch="intent" to={`/article/${post.slug}`}>
 								{post.metadata.title}
 							</Link>
