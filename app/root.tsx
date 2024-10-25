@@ -1,27 +1,15 @@
-import {
-	Links,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-	useLoaderData,
-} from '@remix-run/react';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import type { LinksFunction, LoaderFunctionArgs, SerializeFrom } from '@remix-run/node';
-import { NonFlashOfWrongThemeEls, ThemeProvider, useTheme } from '~/utils/theme-provider';
 import type { Theme } from '~/utils/theme-provider';
-import { getThemeSession } from '~/utils/theme.server';
 import Header from '~/components/Header';
 import { getDomainUrl } from './utils/misc';
-import clsx from 'clsx';
 
 import '~/styles/tailwind.css';
 
 export const links: LinksFunction = () => [];
 
 export async function loader({ request }: LoaderFunctionArgs) {
-	const themeSession = await getThemeSession(request);
 	return {
-		theme: themeSession.getTheme(),
 		requestInfo: { origin: getDomainUrl(request), path: new URL(request.url).pathname },
 	};
 }
@@ -32,12 +20,6 @@ export type LoaderData = {
 };
 
 function App() {
-	const data = useLoaderData<LoaderData>();
-
-	// const [theme] = useTheme();
-
-	// console.log(theme);
-
 	return (
 		<html lang="en">
 			<head>
@@ -45,7 +27,6 @@ function App() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
-				{/* <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} /> */}
 			</head>
 			<body>
 				<div className="flex min-h-screen flex-col">
@@ -63,11 +44,5 @@ function App() {
 }
 
 export default function AppWithProviders() {
-	// const data = useLoaderData<LoaderData>();
-
-	return (
-		// <ThemeProvider specifiedTheme={data.theme}>
-		<App />
-		// </ThemeProvider>
-	);
+	return <App />;
 }
