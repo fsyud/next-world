@@ -20,7 +20,7 @@ const NavLinks = () => {
 				Home
 			</NavLink>
 
-			<NavLink to="/blog" className={activeStyleCallback}>
+			<NavLink to="/blog-ls" className={activeStyleCallback}>
 				Blog
 			</NavLink>
 		</>

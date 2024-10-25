@@ -1,6 +1,5 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import type { LinksFunction, LoaderFunctionArgs, SerializeFrom } from '@remix-run/node';
-import type { Theme } from '~/utils/theme-provider';
 import Header from '~/components/Header';
 import { getDomainUrl } from './utils/misc';
 
@@ -14,10 +13,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
 	};
 }
 export type RootLoaderType = SerializeFrom<typeof loader>;
-
-export type LoaderData = {
-	theme: Theme | null;
-};
 
 function App() {
 	return (

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { LoaderFunctionArgs } from '@remix-run/node';
-import { Link, useLoaderData } from '@remix-run/react';
+import { useLoaderData, NavLink } from '@remix-run/react';
 import { getMDXComponent } from 'mdx-bundler/client';
 import { getPostBySlug } from '~/utils/blog.server';
+import { motion } from 'framer-motion';
 import { blogPageMeta } from '~/utils/blog.meta';
-import { cn } from '~/utils/misc';
+import { textVariants, containerVariants } from '~/data/animationConfig';
+import { ArrowLeft } from 'lucide-react';
 
 export const meta = blogPageMeta;
 
@@ -15,59 +17,40 @@ export async function loader({ params }: LoaderFunctionArgs) {
 }
 
 export default function BlogPost() {
-	const { code, slug, metadata } = useLoaderData<typeof loader>();
+	const { code, metadata } = useLoaderData<typeof loader>();
 
 	const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
 	return (
-		<div key={slug} className="text-lg py-6">
-			<div className="max-w-2xl mx-auto">
-				<Link
-					to="/"
-					className="flex gap-2 mb-8 text-base text-black dark:text-white items-center group max-w-max"
+		<motion.div variants={containerVariants} initial="hidden" animate="visible">
+			<div className="mx-auto flex w-full max-w-[47rem]">
+				<ArrowLeft />{' '}
+				<NavLink className="back-button ml-2 font-sans" to={'/blog-ls'}>
+					Back
+				</NavLink>
+			</div>
+
+			<header className="text-center">
+				<motion.p
+					variants={textVariants}
+					className="my-10 font-sans font-semibold uppercase text-text-secondary dark:text-d-text-secondary"
 				>
-					<ArrowBack />
-					Back to blog
-				</Link>
-				<h1 className="mb-2 text-black dark:text-white text-4xl font-medium">
+					{metadata.date}
+				</motion.p>
+				<motion.h1
+					variants={textVariants}
+					className="mb-20 text-4xl font-bold leading-[1.3] md:text-6xl"
+				>
 					{metadata.title}
-				</h1>
-				<p className="text-sm mb-8">{metadata.date}</p>
-			</div>
+				</motion.h1>
+				<motion.hr variants={textVariants} className="w-[30%] min-w-[100px]" />
 
-			<div className="max-w-4xl mx-auto">
-				<img
-					src={metadata.bannerUrl}
-					alt={metadata.bannerCredit}
-					className="w-full object-cover rounded-lg mb-8"
-					loading="lazy"
-				/>
-			</div>
-
-			<div className="mdx max-w-2xl mx-auto">
-				<Component />
-			</div>
-		</div>
-	);
-}
-
-function ArrowBack(props: React.ComponentProps<'svg'>) {
-	return (
-		<svg
-			width="32"
-			height="32"
-			viewBox="0 0 32 32"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			{...props}
-			className={cn('transform rotate-90 group-hover:-translate-x-1 transition-all')}
-		>
-			<path
-				fillRule="evenodd"
-				clipRule="evenodd"
-				d="M15.101 5.5V23.1094L9.40108 17.4095L8.14807 18.6619L15.9862 26.5L23.852 18.6342L22.5996 17.3817L16.8725 23.1094V5.5H15.101Z"
-				fill="currentColor"
-			></path>
-		</svg>
+				<motion.div variants={textVariants} className="flex justify-center">
+					<div className="prose w-screen py-[1em] px-[2em] dark:prose-invert md:prose-lg lg:prose-xl prose-headings:text-text-primary prose-a:no-underline prose-pre:p-0 dark:prose-headings:text-d-text-primary">
+						<Component />
+					</div>
+				</motion.div>
+			</header>
+		</motion.div>
 	);
 }
