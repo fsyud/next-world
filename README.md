@@ -1,12 +1,8 @@
 # Remix blog stack by Lukas Alvarez!
 
-See it live: https://lukasalvarez.com
+See it live: https://www.fsyud.com/
+<img width="1548" alt="iShot_2024-10-25_21 52 33" src="https://github.com/user-attachments/assets/b679b662-8409-47f8-be08-d2a8a4361fba">
 
-Learn more about [Remix Stacks](https://remix.run/docs/en/main/guides/templates#stacks).
-
-```shellscript
-npx create-remix@latest --template lukasalvarezdev/remix-blog-stack
-```
 
 ## What's in the stack
 
