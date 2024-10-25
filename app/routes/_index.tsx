@@ -17,7 +17,6 @@ export default function Index() {
 	return (
 		<div className="mx-auto max-w-4xl py-8 text-lg">
 			<h1 className="mb-4 text-center text-black font-bold text-5xl">Remix Blog Stack</h1>
-
 			<p className="mb-8 text-center max-w-2xl mx-auto">
 				Add your blog posts to the <code>app/content</code> directory. Each post should be a{' '}
 				<code>.mdx</code> file. Check the README for more information.
