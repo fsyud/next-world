@@ -3,6 +3,8 @@ import { formatDate } from './misc';
 import { rehypePrettyCode } from 'rehype-pretty-code';
 
 export async function getAllPosts() {
+	console.log(Object.entries(postContentsBySlug), '2266');
+
 	const posts = await Promise.all(
 		Array.from(Object.entries(postContentsBySlug))
 			.slice(0, 3)
@@ -11,6 +13,8 @@ export async function getAllPosts() {
 				return { slug, metadata: getFrontMatter(frontmatter) };
 			}),
 	);
+
+	// console.log(posts, 'posts');
 
 	return posts.sort(
 		(a, b) => new Date(b.metadata.rawDate).getTime() - new Date(a.metadata.rawDate).getTime(),
@@ -28,6 +32,10 @@ export async function getPostBySlug(slug: string) {
 				...(options.rehypePlugins ?? []),
 				[rehypePrettyCode, { theme: { dark: 'github-dark-dimmed', light: 'github-light' } }],
 			];
+			options.defaultLang = {
+				block: 'plaintext',
+				inline: 'plaintext',
+			};
 
 			return options;
 		},

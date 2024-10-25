@@ -45,7 +45,7 @@ export default function BlogPost() {
 				</motion.h1>
 				<motion.hr variants={textVariants} className="w-[30%] min-w-[100px]" />
 			</header>
-			<motion.div variants={textVariants} className="flex justify-center">
+			<motion.div variants={textVariants} className="flex justify-center posts-components">
 				<div className="prose w-screen py-[1em] px-[2em] dark:prose-invert md:prose-lg lg:prose-xl prose-headings:text-text-primary prose-a:no-underline prose-pre:p-0 dark:prose-headings:text-d-text-primary">
 					<Component />
 				</div>

@@ -82,6 +82,10 @@
     transition: color linear 0.15s;
   }
 
+  .posts-components pre {
+    padding: 1rem
+  }
+
   h2 a,
   p a,
   footer a,

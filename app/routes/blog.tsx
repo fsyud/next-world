@@ -17,8 +17,6 @@ export const meta: MetaFunction = () => {
 export default function Blog() {
 	const { posts } = useLoaderData<typeof loader>();
 
-	console.log(posts, '123');
-
 	return (
 		<motion.div
 			variants={containerVariants}

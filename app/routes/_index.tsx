@@ -21,7 +21,7 @@ export default function Index() {
 					欢迎来到我的空间
 				</motion.h1>
 				<motion.p variants={textVariants} className="text-lg md:text-xl">
-					查看{' '}
+					我的{' '}
 					<a
 						href="https://github.com/fsyud/remix-world"
 						target="_blank"
@@ -29,7 +29,6 @@ export default function Index() {
 					>
 						GitHub
 					</a>{' '}
-					开始使用。
 				</motion.p>
 			</motion.div>
 
