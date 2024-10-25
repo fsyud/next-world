@@ -1,6 +1,7 @@
-# Remix blog stack by Lukas Alvarez!
+# Remix blog
 
 See it live: https://www.fsyud.com/
+
 <img width="1548" alt="iShot_2024-10-25_21 52 33" src="https://github.com/user-attachments/assets/b679b662-8409-47f8-be08-d2a8a4361fba">
 
 
