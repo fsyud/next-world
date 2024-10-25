@@ -32,7 +32,7 @@ export default function Blog() {
 						{index !== 0 && <hr className="mx-auto my-[60px]" />}
 
 						<h2 className=" mb-4 mt-6 font-sans text-xl font-bold leading-[1.3] md:text-3xl">
-							<Link prefetch="intent" to={`/blog/${post.slug}`}>
+							<Link prefetch="intent" to={`/article/${post.slug}`}>
 								{post.metadata.title}
 							</Link>
 						</h2>

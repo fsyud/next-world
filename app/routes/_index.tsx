@@ -18,18 +18,18 @@ export default function Index() {
 					variants={textVariants}
 					className="mb-[0.5em] text-2xl font-bold leading-[1.3] md:text-4xl"
 				>
-					Welcome to your new Remix Blog
+					欢迎来到我的空间
 				</motion.h1>
 				<motion.p variants={textVariants} className="text-lg md:text-xl">
-					Check out the codebase on{' '}
+					查看{' '}
 					<a
-						href="https://github.com/rajeshbabu-oviva/remix-mdx-blog"
+						href="https://github.com/fsyud/remix-world"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						GitHub
 					</a>{' '}
-					to get started.
+					开始使用。
 				</motion.p>
 			</motion.div>
 
@@ -48,7 +48,7 @@ export default function Index() {
 				</motion.div>
 
 				<p className="text-left text-[0.8em] italic">
-					Illustration by{' '}
+					插图{' '}
 					<a
 						href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6"
 						target="_blank"
@@ -57,7 +57,7 @@ export default function Index() {
 						{' '}
 						Icons 8{' '}
 					</a>{' '}
-					from{' '}
+					来自{' '}
 					<a href="https://icons8.com/illustrations" target="_blank" rel="noopener noreferrer">
 						Ouch!
 					</a>

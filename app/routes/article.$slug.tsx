@@ -25,7 +25,7 @@ export default function BlogPost() {
 		<motion.div variants={containerVariants} initial="hidden" animate="visible">
 			<div className="mx-auto flex w-full max-w-[47rem]">
 				<ArrowLeft />{' '}
-				<NavLink className="back-button ml-2 font-sans" to={'/blog-ls'}>
+				<NavLink className="back-button ml-2 font-sans" to={'/blog'}>
 					Back
 				</NavLink>
 			</div>
@@ -44,13 +44,12 @@ export default function BlogPost() {
 					{metadata.title}
 				</motion.h1>
 				<motion.hr variants={textVariants} className="w-[30%] min-w-[100px]" />
-
-				<motion.div variants={textVariants} className="flex justify-center">
-					<div className="prose w-screen py-[1em] px-[2em] dark:prose-invert md:prose-lg lg:prose-xl prose-headings:text-text-primary prose-a:no-underline prose-pre:p-0 dark:prose-headings:text-d-text-primary">
-						<Component />
-					</div>
-				</motion.div>
 			</header>
+			<motion.div variants={textVariants} className="flex justify-center">
+				<div className="prose w-screen py-[1em] px-[2em] dark:prose-invert md:prose-lg lg:prose-xl prose-headings:text-text-primary prose-a:no-underline prose-pre:p-0 dark:prose-headings:text-d-text-primary">
+					<Component />
+				</div>
+			</motion.div>
 		</motion.div>
 	);
 }
