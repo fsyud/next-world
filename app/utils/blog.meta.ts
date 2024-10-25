@@ -51,7 +51,7 @@ function getUrl(requestInfo?: { origin: string; path: string }) {
 
 const images = {
 	garden:
-		'https://res.cloudinary.com/dmfhqqv3t/image/upload/v1726410443/markus-spiske-bk11wZwb9F4-unsplash_2_cq42fa.jpg',
+		'https://res.com/dmfhqqv3t/image/upload/v1726410443/markus-spiske-bk11wZwb9F4-unsplash_2_cq42fa.jpg',
 };
 
 /**
