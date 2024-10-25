@@ -22,11 +22,7 @@ export default function Index() {
 				</motion.h1>
 				<motion.p variants={textVariants} className="text-lg md:text-xl">
 					我的{' '}
-					<a
-						href="https://github.com/fsyud/remix-world"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<a href="https://github.com/fsyud" target="_blank" rel="noopener noreferrer">
 						GitHub
 					</a>{' '}
 				</motion.p>

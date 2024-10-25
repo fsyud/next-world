@@ -1,5 +1,5 @@
 ---
-title: Why We Should Reconnect with Nature
+title: web消息推送方式
 date: 2024-10-21
 description: 消息推送一般又分为 web 端消息推送和移动端消息推送。
 ---
@@ -125,12 +125,12 @@ public class AsyncRequestTimeoutHandler {
 
 ## iframe 流
 
-iframe 流就是在页面中插入一个隐藏的`<iframe>`标签，通过在 src 中请求消息数量 API 接口，由此在服
-务端和客户端之间创建一条长连接，服务端持续向`iframe`传输数据。
+iframe 流就是在页面中插入一个隐藏的标签，通过在 src 中请求消息数量 API 接口，由此在服务端和客户
+端之间创建一条长连接，服务端持续向`iframe`传输数据。
 
 > 传输的数据通常是 HTML、或是内嵌的 javascript 脚本，来达到实时更新页面的效果。
 
-这种方式实现简单，前端只要一个<iframe>标签搞定了
+这种方式实现简单，前端只要一个`iframe`标签搞定了
 
 ```js
 <iframe src="/iframe/message" style="display:none"></iframe>

@@ -3,18 +3,12 @@ import { formatDate } from './misc';
 import { rehypePrettyCode } from 'rehype-pretty-code';
 
 export async function getAllPosts() {
-	console.log(Object.entries(postContentsBySlug), '2266');
-
 	const posts = await Promise.all(
-		Array.from(Object.entries(postContentsBySlug))
-			.slice(0, 3)
-			.map(async ([slug, content]) => {
-				const { frontmatter } = await bundleMDX({ source: content });
-				return { slug, metadata: getFrontMatter(frontmatter) };
-			}),
+		Array.from(Object.entries(postContentsBySlug)).map(async ([slug, content]) => {
+			const { frontmatter } = await bundleMDX({ source: content });
+			return { slug, metadata: getFrontMatter(frontmatter) };
+		}),
 	);
-
-	// console.log(posts, 'posts');
 
 	return posts.sort(
 		(a, b) => new Date(b.metadata.rawDate).getTime() - new Date(a.metadata.rawDate).getTime(),
