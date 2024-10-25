@@ -11,7 +11,7 @@ export const loader: LoaderFunction = async () => {
 };
 
 export const meta: MetaFunction = () => {
-	return [{ title: 'Remix Blog Stack by Lukas Alvarez' }];
+	return [{ title: 'Karl.blog' }];
 };
 
 export default function Blog() {
@@ -22,7 +22,7 @@ export default function Blog() {
 			variants={containerVariants}
 			initial="hidden"
 			animate="visible"
-			className="mx-auto my-0 w-full max-w-[42em]"
+			className="mx-auto my-0 w-full max-w-[42em] mb-8"
 		>
 			{posts.map((post: BlogList, index: number) => {
 				return (

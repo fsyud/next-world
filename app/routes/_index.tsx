@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
+import type { MetaFunction } from '@remix-run/node';
 import {
 	textVariants,
 	containerVariants,
 	imageLoadAnimationProps,
 } from '~/data/animationConfig';
+
+export const meta: MetaFunction = () => {
+	return [{ title: 'Karl.home' }];
+};
 
 export default function Index() {
 	return (
@@ -18,7 +23,7 @@ export default function Index() {
 					variants={textVariants}
 					className="mb-[0.5em] text-2xl font-bold leading-[1.3] md:text-4xl"
 				>
-					欢迎来到我的空间
+					欢迎来到我的博客
 				</motion.h1>
 				<motion.p variants={textVariants} className="text-lg md:text-xl">
 					我的{' '}
@@ -31,32 +36,21 @@ export default function Index() {
 			<div className="mx-[1em] my-0 text-center">
 				<motion.div {...imageLoadAnimationProps}>
 					<picture className="block min-h-[250px]">
-						<source srcSet="/assets/images/home-illustration.webp" media="(min-width: 600px)" />
+						<source srcSet="/assets/images/interesting-show.webp" media="(min-width: 600px)" />
 						<img
-							className="mb-[1em] w-full max-w-[550px] max-w-lg:max-w-[400px]"
+							className="mb-[1em] w-full max-w-[750px] max-w-lg:max-w-[400px] rounded-xl"
 							alt="Illustration of person reading a book"
-							src="/assets/images/home-illustration-small.webp"
-							width="550"
+							src="/assets/images/interesting-show.webp"
+							width="750"
 							height="466"
 						/>
 					</picture>
 				</motion.div>
 
-				<p className="text-left text-[0.8em] italic">
-					插图{' '}
-					<a
-						href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						{' '}
-						Icons 8{' '}
-					</a>{' '}
-					来自{' '}
-					<a href="https://icons8.com/illustrations" target="_blank" rel="noopener noreferrer">
-						Ouch!
-					</a>
-				</p>
+				{/* <p className="text-left text-[0.8em] italic">
+						Illustration by{' '}
+						<a href="https://icons8.com/illustrations/author/AJeVuFhkCuqC">ekzi.letters Ouch!</a>
+					</p> */}
 			</div>
 		</div>
 	);
