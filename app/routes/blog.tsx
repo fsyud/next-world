@@ -1,14 +1,13 @@
 import type { LoaderFunction } from '@remix-run/node';
 import type { MetaFunction } from '@remix-run/node';
-import { json } from '@remix-run/node';
-import { Link, useLoaderData } from '@remix-run/react';
+import { Link, useLoaderData, defer } from '@remix-run/react';
 import type { BlogList } from '~/data/blogList.server';
-import { blogList } from '~/data/blogList.server';
+import { getAllPosts } from '~/utils/blog.server';
 import { motion } from 'framer-motion';
 import { textVariants, containerVariants } from '~/data/animationConfig';
 
 export const loader: LoaderFunction = async () => {
-	return json(blogList);
+	return defer({ posts: await getAllPosts() });
 };
 
 export const meta: MetaFunction = () => {
@@ -16,7 +15,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Blog() {
-	const posts = useLoaderData<BlogList[]>();
+	const { posts } = useLoaderData<typeof loader>();
 
 	return (
 		<motion.div

@@ -14,26 +14,26 @@ export interface BlogList {
 
 export const blogList: Array<BlogList> = [
 	{
-		slug: 'hello-world', // Filename
+		slug: 'hello-world1', // Filename
 		metadata: {
 			bannerCredit: '',
 			bannerUrl: '',
 			date: '30 Nov 2021',
 			description: 'Every blog starts with a single post. This is yours. Make it great.',
 			rawDate: '',
-			title: '',
+			title: '1',
 			readingTime: '',
 		},
 	},
 	{
-		slug: 'hello-world', // Filename
+		slug: 'hello-world2', // Filename
 		metadata: {
 			bannerCredit: '',
 			bannerUrl: '',
 			date: '30 Nov 2021',
 			description: 'Every blog starts with a single post. This is yours. Make it great.',
 			rawDate: '',
-			title: '',
+			title: '2',
 			readingTime: '',
 		},
 	},
