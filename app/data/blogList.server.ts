@@ -8,5 +8,57 @@ export interface BlogList {
 		description: string;
 		rawDate: string;
 		title: string;
+		readingTime?: string;
 	};
 }
+
+export const blogList: Array<BlogList> = [
+	{
+		slug: 'hello-world', // Filename
+		metadata: {
+			bannerCredit: '',
+			bannerUrl: '',
+			date: '30 Nov 2021',
+			description: 'Every blog starts with a single post. This is yours. Make it great.',
+			rawDate: '',
+			title: '',
+			readingTime: '',
+		},
+	},
+	{
+		slug: 'hello-world', // Filename
+		metadata: {
+			bannerCredit: '',
+			bannerUrl: '',
+			date: '30 Nov 2021',
+			description: 'Every blog starts with a single post. This is yours. Make it great.',
+			rawDate: '',
+			title: '',
+			readingTime: '',
+		},
+	},
+	{
+		slug: 'hello-world', // Filename
+		metadata: {
+			bannerCredit: '',
+			bannerUrl: '',
+			date: '30 Nov 2021',
+			description: 'Every blog starts with a single post. This is yours. Make it great.',
+			rawDate: '',
+			title: '',
+			readingTime: '',
+		},
+	},
+	{
+		slug: 'hello-world', // Filename
+		metadata: {
+			bannerCredit: '',
+			bannerUrl: '',
+			date: '30 Nov 2021',
+			description: 'Every blog starts with a single post. This is yours. Make it great.',
+			rawDate: '',
+			title: '',
+			readingTime: '',
+		},
+	},
+];
