@@ -6,8 +6,10 @@ import {
 	imageLoadAnimationProps,
 } from '~/data/animationConfig';
 
+import { getSocialMetas, getOrigin } from '~/utils/blog.meta';
+
 export const meta: MetaFunction = () => {
-	return [{ title: 'Karl.home' }];
+	return [...[{ title: 'Karl.home' }], ...getSocialMetas({ url: getOrigin() })];
 };
 
 export default function Index() {
