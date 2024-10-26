@@ -9,7 +9,13 @@ import {
 import { getSocialMetas, getOrigin } from '~/utils/blog.meta';
 
 export const meta: MetaFunction = () => {
-	return [...[{ title: 'Karl.home' }], ...getSocialMetas({ url: getOrigin() })];
+	return [
+		...[
+			{ title: 'Karl.home' },
+			{ name: 'Karl blog', content: 'A programmer who advocates freedom and style' },
+		],
+		...getSocialMetas({ url: getOrigin() }),
+	];
 };
 
 export default function Index() {
