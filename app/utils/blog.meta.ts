@@ -39,8 +39,8 @@ export const blogPageMeta: MetaFunction<MetaLoader, { root: RootLoaderType }> = 
 	}
 };
 
-function getOrigin(requestInfo?: { origin?: string; path: string }) {
-	return requestInfo?.origin ?? 'https://lukasalvarez.com';
+export function getOrigin(requestInfo?: { origin?: string; path: string }) {
+	return requestInfo?.origin ?? 'https://fsyud.com';
 }
 function removeTrailingSlash(s: string) {
 	return s.endsWith('/') ? s.slice(0, -1) : s;
@@ -50,8 +50,7 @@ function getUrl(requestInfo?: { origin: string; path: string }) {
 }
 
 const images = {
-	garden:
-		'https://res.com/dmfhqqv3t/image/upload/v1726410443/markus-spiske-bk11wZwb9F4-unsplash_2_cq42fa.jpg',
+	garden: 'https://www.fsyud.com/assets/images/interesting-show.webp',
 };
 
 /**
@@ -59,7 +58,7 @@ const images = {
  */
 export function getSocialMetas({
 	url,
-	title = "Going beyond software: Make something you're truly proud of.",
+	title = 'Karl, who likes to write code, travel, ride a bike and advocate freedom',
 	description = 'Make the world better with software',
 	image = images.garden,
 	keywords = '',
@@ -83,8 +82,8 @@ export function getSocialMetas({
 			name: 'twitter:card',
 			content: image ? 'summary_large_image' : 'summary',
 		},
-		{ name: 'twitter:creator', content: '@lukasalvarezdev' },
-		{ name: 'twitter:site', content: '@lukasalvarezdev' },
+		{ name: 'twitter:creator', content: '@fsyud' },
+		{ name: 'twitter:site', content: '@fsyud' },
 		{ name: 'twitter:title', content: title },
 		{ name: 'twitter:description', content: description },
 		{ name: 'twitter:image', content: image },
