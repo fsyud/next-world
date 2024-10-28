@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import type { MetaFunction } from '@remix-run/node';
+import { Github } from 'lucide-react';
+
 import {
 	textVariants,
 	containerVariants,
@@ -33,11 +35,11 @@ export default function Index() {
 				>
 					欢迎来到我的博客
 				</motion.h1>
-				<motion.p variants={textVariants} className="text-lg md:text-xl">
-					我的{' '}
+				<motion.p variants={textVariants} className="text-lg md:text-xl flex flex-row">
 					<a href="https://github.com/fsyud" target="_blank" rel="noopener noreferrer">
 						GitHub
-					</a>{' '}
+					</a>
+					<Github />
 				</motion.p>
 			</motion.div>
 

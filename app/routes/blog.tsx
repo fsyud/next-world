@@ -27,13 +27,13 @@ export default function Blog() {
 			{posts.map((post: BlogList, index: number) => {
 				return (
 					<motion.div variants={textVariants} key={post.slug}>
-						{index !== 0 && <hr className="mx-auto" />}
+						{index !== 0 && <hr className="my-8" />}
 						<h2 className="mt-6 font-sans text-xl font-bold leading-[1.3] md:text-3xl">
 							<Link prefetch="intent" to={`/article/${post.slug}`}>
 								{post.metadata.title}
 							</Link>
 						</h2>
-						<p className="my-6 md:text-lg">{post.metadata.description}</p>
+						<p className="my-1 md:text-lg">{post.metadata.description}</p>
 						<div className="font-sans font-bold">
 							<span className="mr-4 text-left uppercase text-text-secondary dark:text-d-text-secondary">
 								— {post.metadata.date}
