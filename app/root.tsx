@@ -45,7 +45,6 @@ function App() {
 			<body>
 				{process.env.NODE_ENV === 'development' ? null : (
 					<>
-						<script async src={`https://www.googletagmanager.com/gtag/js?id=G-T2EMHL25GX`} />
 						<script
 							async
 							id="gtag-init"
