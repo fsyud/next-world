@@ -7,6 +7,12 @@ import { getDomainUrl } from './utils/misc';
 
 import '~/styles/tailwind.css';
 
+declare global {
+	interface Window {
+		gtag: (option: string, gaTrackingId: string, options: Record<string, unknown>) => void;
+	}
+}
+
 export const links: LinksFunction = () => [];
 
 export async function loader({ request }: LoaderFunctionArgs) {
