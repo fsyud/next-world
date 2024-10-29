@@ -1,20 +1,9 @@
 import { useEffect } from 'react';
-import { json } from '@remix-run/node';
-import {
-	Links,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-	useLocation,
-	useLoaderData,
-} from '@remix-run/react';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from '@remix-run/react';
 import type { LinksFunction, LoaderFunctionArgs, SerializeFrom } from '@remix-run/node';
 import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 import { getDomainUrl } from './utils/misc';
-
-import * as gtag from '~/utils/gtags.client';
 
 import '~/styles/tailwind.css';
 
@@ -24,7 +13,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
 	return {
 		requestInfo: { origin: getDomainUrl(request), path: new URL(request.url).pathname },
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		gaTrackingId: json({ gaTrackingId: process.env.GA_TRACKING_ID }) as any,
 	};
 }
 export type RootLoaderType = SerializeFrom<typeof loader>;
@@ -32,13 +20,13 @@ export type RootLoaderType = SerializeFrom<typeof loader>;
 function App() {
 	const location = useLocation();
 
-	const { gaTrackingId } = useLoaderData<typeof loader>();
-
 	useEffect(() => {
-		if (gaTrackingId?.length) {
-			gtag.pageview(location.pathname, gaTrackingId);
+		if (window?.gtag) {
+			window.gtag('config', 'G-T2EMHL25GX', {
+				page_path: location.pathname,
+			});
 		}
-	}, [location, gaTrackingId]);
+	}, [location]);
 
 	return (
 		<html lang="en">
@@ -49,9 +37,9 @@ function App() {
 				<Links />
 			</head>
 			<body>
-				{process.env.NODE_ENV === 'development' || !gaTrackingId ? null : (
+				{process.env.NODE_ENV === 'development' ? null : (
 					<>
-						<script async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`} />
+						<script async src={`https://www.googletagmanager.com/gtag/js?id=G-T2EMHL25GX`} />
 						<script
 							async
 							id="gtag-init"
@@ -61,7 +49,7 @@ function App() {
 									function gtag(){dataLayer.push(arguments);}
 									gtag('js', new Date());
 
-									gtag('config', '${gaTrackingId}', {
+									gtag('config', 'G-T2EMHL25GX', {
 									page_path: window.location.pathname,
 									});
 								`,
