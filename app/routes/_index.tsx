@@ -46,11 +46,11 @@ export default function Index() {
 			<div className="mx-[1em] my-0 text-center">
 				<motion.div {...imageLoadAnimationProps}>
 					<picture className="block min-h-[250px]">
-						<source srcSet="/assets/images/textures-abstract.webp" media="(min-width: 600px)" />
+						<source srcSet="/assets/images/interesting-show.webp" media="(min-width: 600px)" />
 						<img
 							className="mb-[1em] w-full max-w-[750px] max-w-lg:max-w-[400px] rounded-2xl"
 							alt="Illustration of person reading a book"
-							src="/assets/images/textures-abstract.webp"
+							src="/assets/images/interesting-show.webp"
 							width="750"
 							height="466"
 						/>
