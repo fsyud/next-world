@@ -36,31 +36,31 @@ export default function Index() {
 					欢迎来到我的博客
 				</motion.h1>
 				<motion.p variants={textVariants} className="text-lg md:text-xl flex flex-row">
+					<Github />
 					<a href="https://github.com/fsyud" target="_blank" rel="noopener noreferrer">
 						GitHub
 					</a>
-					<Github />
 				</motion.p>
 			</motion.div>
 
 			<div className="mx-[1em] my-0 text-center">
 				<motion.div {...imageLoadAnimationProps}>
 					<picture className="block min-h-[250px]">
-						<source srcSet="/assets/images/interesting-show.webp" media="(min-width: 600px)" />
+						<source srcSet="/assets/images/textures-abstract.webp" media="(min-width: 600px)" />
 						<img
 							className="mb-[1em] w-full max-w-[750px] max-w-lg:max-w-[400px] rounded-2xl"
 							alt="Illustration of person reading a book"
-							src="/assets/images/interesting-show.webp"
+							src="/assets/images/textures-abstract.webp"
 							width="750"
 							height="466"
 						/>
 					</picture>
 				</motion.div>
 
-				{/* <p className="text-left text-[0.8em] italic">
-						Illustration by{' '}
-						<a href="https://icons8.com/illustrations/author/AJeVuFhkCuqC">ekzi.letters Ouch!</a>
-					</p> */}
+				<p className="text-left text-[0.8em] italic">
+					Illustration by{' '}
+					<a href="https://icons8.com/illustrations/author/AJeVuFhkCuqC">ekzi.letters Ouch!</a>
+				</p>
 			</div>
 		</div>
 	);
