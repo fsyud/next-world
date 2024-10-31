@@ -7,6 +7,7 @@ import {
 	containerVariants,
 	imageLoadAnimationProps,
 } from '~/data/animationConfig';
+import LitComponent from '~/components/LitComponent';
 
 import { getSocialMetas, getOrigin } from '~/utils/blog.meta';
 
@@ -33,7 +34,7 @@ export default function Index() {
 					variants={textVariants}
 					className="mb-[0.5em] text-2xl font-bold leading-[1.3] md:text-4xl"
 				>
-					欢迎来到我的博客
+					<LitComponent name="欢迎来到我的博客" />
 				</motion.h1>
 				<motion.p variants={textVariants} className="text-lg md:text-xl flex flex-row">
 					<Github />

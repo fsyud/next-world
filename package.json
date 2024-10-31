@@ -24,6 +24,7 @@
 		"framer-motion": "^11.11.9",
 		"highlight.js": "^11.10.0",
 		"isbot": "^4.1.0",
+		"lit-html": "^3.2.1",
 		"lucide-react": "^0.453.0",
 		"mdx-bundler": "^10.0.3",
 		"react": "^18.2.0",
