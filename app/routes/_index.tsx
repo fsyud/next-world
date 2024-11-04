@@ -58,10 +58,10 @@ export default function Index() {
 					</picture>
 				</motion.div>
 
-				<p className="text-left text-[0.8em] italic">
+				{/* <p className="text-left text-[0.8em] italic">
 					Illustration by{' '}
 					<a href="https://icons8.com/illustrations/author/AJeVuFhkCuqC">ekzi.letters Ouch!</a>
-				</p>
+				</p> */}
 			</div>
 		</div>
 	);
